@@ -16,42 +16,49 @@
       let ctx = canvas.getContext("2d");
       ctx.fillStyle = "black";
       ctx.strokeStyle = "none";
+      ctx.lineWidth = 8;
+      ctx.lineCap = "round";
+
+      let painting = false;
+      let last;
 
       function drawLine(x1, y1, x2, y2) {
         ctx.beginPath();
         ctx.moveTo(x1, y1);
         ctx.lineTo(x2, y2);
-
         ctx.stroke();
       }
-      drawLine(0, 0, 500, 500);
-
-      let painting = false;
 
       var isTouchDevice = "ontouchstart" in document.documentElement;
       //手机是否支持触摸
       if (isTouchDevice) {
-        canvas.ontouchmove = q => {
-          let x = q.touches[0].clientX;
-          let y = q.touches[0].clientY;
+        canvas.ontouchstart = e => {
+          let x = e.touches[0].clientX;
+          let y = e.touches[0].clientY;
+          last = [x, y];
+        };
+        canvas.ontouchmove = e => {
+          let x = e.touches[0].clientX;
+          let y = e.touches[0].clientY;
+          drawLine(last[0], last[1], x, y);
+          last = [x, y];
           // console.log(x, y);
-          ctx.beginPath();
-          ctx.arc(x, y, 10, 0, 2 * Math.PI);
-          ctx.stroke();
-          ctx.fill();
+          // ctx.beginPath();
+          // ctx.arc(x, y, 10, 0, 2 * Math.PI);
+          // ctx.stroke();
+          // ctx.fill();
         };
       } else {
-        canvas.onmousedown = () => {
+        canvas.onmousedown = e => {
           painting = true;
+          last = [e.clientX, e.clientY];
         };
       }
 
       canvas.onmousemove = e => {
         if (painting === true) {
-          ctx.beginPath();
-          ctx.arc(e.clientX, e.clientY, 10, 0, 2 * Math.PI);
-          ctx.stroke();
-          ctx.fill();
+          drawLine(last[0], last[1], e.clientX, e.clientY);
+          last = [e.clientX, e.clientY];
         } else {
           console.log("什么都不做");
         }
