@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>画板</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <canvas id="canvas" width="100" height="100"></canvas>
+    <div id="actions" class="actions">
+      <svg id="brush" class="icon active" aria-hidden="true" >
+        <title>画笔</title>
+        <use xlink:href="#icon-brush"></use>
+      </svg>
+
+      <svg id="eraser" class="icon" aria-hidden="true">
+        <title>橡皮擦</title>
+        <use xlink:href="#icon-eraser"></use>
+      </svg>
+      <svg id="clear" class="icon" aria-hidden="true">
+        <title>全部清除</title>
+        <use xlink:href="#icon-clear"></use>
+      </svg>
+    </div>
+    <div class="download" title="保存草稿">
+      <svg id="download" class="icon" aria-hidden="true">
+        <use xlink:href="#icon-download"></use>
+      </svg>
+    </div>
+    <ol id="colors" title="画笔颜色">
+      <li id="black" class="active"></li>
+      <li id="red"></li>
+      <li id="yellow"></li>
+      <li id="green"></li>
+      <li id="blue"></li>
+    </ol>
+    <ol id="line">
+      <li id="big" class="active" title="大号笔头"><span></span></li>
+      <li id="middle" title="中号笔头"><span></span></li>
+      <li id="small" title="小号笔头"><span></span></li>
+    </ol>
+
+    <script src="./main.js"></script>
+    <script src="//at.alicdn.com/t/font_1692551_dazuu5qu5zw.js"></script>
+  </body>
+</html>
