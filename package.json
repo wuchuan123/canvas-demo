@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Administrator <609833577@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  },
+  "scripts": {
+    "build":"rm -rf dist && parcel build src/index.html --no-minify --public-url ./"
+  }
 }

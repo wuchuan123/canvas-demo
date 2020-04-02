@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ol {
+  list-style: none;
+}
+
+#canvas {
+  display: block;
+  background:white;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+.actions {
+  position: fixed;
+  display: flex;
+  top: 18px;
+  left: 14px;
+  width: 180px;
+  justify-content: space-between;
+  align-items: center;
+}
+.download {
+  position: fixed;
+  top: 18px;
+  right: 14px;
+}
+#download{
+  width: 2.5em;
+  height: 2.5em;
+}
+.icon {
+  width: 2.5em;
+  height: 2.5em;
+  vertical-align: -0.15em;
+  fill: black;
+  overflow: hidden;
+  padding: 2px;
+  margin: 0 4px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+#clear {
+  width: 2.2em;
+  height: 2.2em;
+  cursor: pointer;
+  
+}
+.actions svg.active {
+  fill: rgb(197,72,52);
+  transform: scale(1.2);
+}
+#colors{
+  position: fixed;
+  top: 120px;
+  left: 18px;
+}
+#colors li{
+  width: 16px;
+  height: 16px;
+  margin: 16px 0;
+  border-radius: 50%;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#colors li#black{
+  background: #000;
+  border: 1px solid #101010;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+#colors li#red{
+  background: red;
+  border: 1px solid #ca0001;
+  box-shadow: 0 2px 5px rgba(255, 0, 0, 0.6);
+}
+#colors li#yellow {
+  background: yellow;
+  border: 1px solid #c7c500;
+  box-shadow: 0 2px 5px rgba(255, 255, 0, 0.6);
+}
+#colors li#green {
+  background: green;
+  border: 1px solid #0d5600;
+  box-shadow: 0 2px 5px rgba(12, 91, 26, 0.6);
+}
+#colors li#blue {
+  background: blue;
+  border: 1px solid #001ba5;
+  box-shadow: 0 2px 5px rgba(129, 95, 246, 0.6);
+}
+#colors li.active{
+  transform:scale(1.4);
+}
+#line{
+  position: fixed;
+  top:350px;
+  left:18px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#line li{
+  width: 20px;
+  height: 20px;
+  padding: 10px 0;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#line li.active{
+  transform: scale(1.4);
+  padding: 4px 0;
+}
+#line li span{
+  width: 100%;
+  display: block;
+  background: #000;
+}
+#line li#big span{
+  height: 10px;
+}
+#line li#middle span{
+  height: 7px;
+}
+#line li#small span{
+  height: 4px;
+}
+
+
+
+
+
+/*# sourceMappingURL=/style.e17a80f5.d113a610.8abaa958.css.map */
